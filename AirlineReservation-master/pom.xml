@@ -34,5 +34,6 @@
 	<modules>
 		<module>AirlineRepositories</module>
 		<module>AirlineRESTServices</module>
+		<module>AirlineSOAPServices</module>
 	</modules>
 </project>

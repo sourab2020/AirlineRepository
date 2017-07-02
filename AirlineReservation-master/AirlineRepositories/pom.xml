@@ -14,8 +14,6 @@
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    		<hibernate.version>4.3.5.Final</hibernate.version>
-		<mysql.connector.version>5.1.30</mysql.connector.version>
   </properties>
   <dependencies>
     <dependency>
@@ -24,18 +22,5 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    		<!-- Hibernate ORM -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-dbcp2</artifactId>
-			<version>2.1.1</version>
-		</dependency>
-    
   </dependencies>
 </project>
