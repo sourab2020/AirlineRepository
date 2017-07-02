@@ -26,7 +26,7 @@ public class RestServiceController {
 
 	@RequestMapping(value = "/{flightID}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE, MediaType.TEXT_HTML_VALUE })
-	public ResponseEntity<?> getEmployee(@PathVariable String flightID) {
+	public ResponseEntity<?> getFlight(@PathVariable String flightID) {
 
 		FlightInformation flightInfo = flightService.getFlightInfo(Integer.parseInt(flightID));
 		if (flightInfo == null) {
@@ -38,7 +38,7 @@ public class RestServiceController {
 
 	@RequestMapping(method = RequestMethod.POST, consumes = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE, MediaType.TEXT_HTML_VALUE })
-	public ResponseEntity<?> createEmployee(@RequestBody FlightInformation flightInfo) {
+	public ResponseEntity<?> AddFlight(@RequestBody FlightInformation flightInfo) {
 
 		FlightInformation newFlightInfo = flightService.saveFlightDetails(flightInfo);
 		return new ResponseEntity<>(newFlightInfo, HttpStatus.CREATED);
@@ -50,7 +50,7 @@ public class RestServiceController {
 
 	
 	 @RequestMapping(value = "/{flightID}", method = RequestMethod.DELETE) public
-	  ResponseEntity<?> deleteEmployee(@PathVariable Integer flightID) { 
+	  ResponseEntity<?> deleteFlight(@PathVariable Integer flightID) { 
 		 Integer fId = flightService.deleteFlight(flightID); 
 		 if (fId == null) {
 	  return new ResponseEntity<>(HttpStatus.BAD_REQUEST); } else {
