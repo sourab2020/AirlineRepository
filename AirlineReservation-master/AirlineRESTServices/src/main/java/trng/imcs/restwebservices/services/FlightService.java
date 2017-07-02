@@ -38,62 +38,31 @@ public class FlightService {
 		return flightInfo;
 	}
 
-/*	public FliInghtService() {
-		FlightInformation employee = new FlightInformation();
-		employee.setEmpNo("1001");
-		employee.setName("Gautham");
-		employee.setAge(24);
-		employee.setSalary(6000.00);
-		employees.add(employee);
+    public FlightInformation updateFlight(FlightInformation source) {
+FlightInformation flightInfo = getFlightInfo(source.getAirlineId());
+flightInfo.setAirlineName(source.getAirlineName());
+flightInfo.setArrivalTime(source.getArrivalTime());
+flightInfo.setDuration(source.getDuration());
+flightInfo.setDepartureTime(source.getDepartureTime());
+flightInfo.setAvailableSeats(source.getAvailableSeats());
+flightInfo.setDestination(source.getDestination());
+flightInfo.setOrigin(source.getOrigin());
+flightInfo.setPrice(source.getPrice());
+flightInfo.setTotalSeats(source.getTotalSeats());
+flightInfo.setFlightId(source.getFlightId());
 
-		Employee employee1 = new Employee();
-		employee1.setEmpNo("1002");
-		employee1.setName("Dinesh");
-		employee1.setAge(26);
-		employee1.setSalary(6400.00);
-		employees.add(employee);
-	}
 
-	public Employee getEmployee(String empId) {
+return flightInfo;
+}
+public Integer deleteFlight(Integer flightId) {
 
-		for (Employee employee : employees) {
-			if (employee.getEmpNo().equals(empId)) {
-				return employee;
-			}
-		}
-		return null;
-	}
-
-	public Employee saveEmployee(Employee employee) {
-
-		employee.setEmpNo("" + empIdGen.incrementAndGet());
-		employees.add(employee);
-		return employee;
-	}
-
-	public Employee updateEmployee(Employee source) {
-		Employee employee = getEmployee(source.getEmpNo());
-		employee.setName(source.getName());
-		employee.setAge(source.getAge());
-		employee.setSalary(source.getSalary());
-
-		return employee;
-	}
-
-	public List<Employee> getEmployees() {
-		// TODO Auto-generated method stub
-		return employees;
-	}
-
-	public String deleteEmployee(String empId) {
-
-		for (Employee employee : employees) {
-			if (employee.getEmpNo().equals(empId)) {
-				employees.remove(employee);
-				return empId;
-			}
-		}
-		return null;
-	}*/
+for (FlightInformation flightInformation : flightInformations) {
+if (flightInformation.getAirlineId().equals(flightId)) {
+flightInformations.remove(flightInformation);
+return flightId;
+}
+}
+return null;
+}
 
 }
